@@ -37,3 +37,46 @@ let eventAssignment = function (note) {
     keyReturn(event);
   };
 };
+
+
+// Write a loop that runs the array elements through the function
+notes.forEach(eventAssignment);
+
+// These variables store the buttons that progress the user through the lyrics
+let nextOne = document.getElementById('first-next-line');
+let nextTwo = document.getElementById('second-next-line');
+let nextThree = document.getElementById('third-next-line');
+let startOver = document.getElementById('fourth-next-line');
+
+// This variable stores the '-END' lyric element
+let lastLyric = document.getElementById('column-optional');
+
+// These statements are "hiding" all the progress buttons, but the first one
+nextTwo.hidden = true;
+nextThree.hidden = true;
+startOver.hidden= true;
+
+// Write anonymous event handler property and function for the first progress button
+nextOne.onclick = function() {
+  nextTwo.hidden = false;
+  nextOne.hidden = true;
+
+document.getElementById('letter-note-five').innerHTML = 'D'
+document.getElementById('letter-note-six').innerHTML = 'C'
+}
+
+// Write anonymous event handler property and function for the second progress button
+nextTwo.onclick = function() {
+  nextThree.hidden = false;
+  nextTwo.hidden = true;
+
+  document.getElementById('word-five').innerHTML = 'DEAR';
+  document.getElementById('word-six').innerHTML = 'FRI-';
+
+  document.getElementById('letter-note-three').innerHTML = 'G'
+  document.getElementById('letter-note-four').innerHTML = 'E'
+  document.getElementById('letter-note-five').innerHTML = 'C'
+  document.getElementById('letter-note-six').innerHTML = 'B'
+
+  lastLyric.style.display = 'inline-block'
+}
